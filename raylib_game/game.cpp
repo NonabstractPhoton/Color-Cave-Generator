@@ -95,6 +95,7 @@ int main(int argc, char* argv[])
         for (int i = 0; i < nextId; i++)
         {
             Cave& currentCave = caves.at(i);
+            cout << "Cave at (" << currentCave.pos.x << ", " << currentCave.pos.y << ")";
             bool clickedOnCave = currentCave.isInsideOfNode(mousePos, nodeRadius);
             if (clickedOnCave)
             {
@@ -132,7 +133,6 @@ int main(int argc, char* argv[])
                         doorColor = KEY_NULL;
                     }
                 }
-                break;
             }
 
             DrawCircle(currentCave.pos.x, currentCave.pos.y, nodeRadius, nodeColor); // Draw Node
