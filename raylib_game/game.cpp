@@ -95,7 +95,6 @@ int main(int argc, char* argv[])
         for (int i = 0; i < nextId; i++)
         {
             Cave& currentCave = caves.at(i);
-            cout << "Cave at (" << currentCave.pos.x << ", " << currentCave.pos.y << ")";
             bool clickedOnCave = currentCave.isInsideOfNode(mousePos, nodeRadius);
             if (clickedOnCave)
             {
@@ -105,8 +104,6 @@ int main(int argc, char* argv[])
                     {
                         if (currentCave.linkedCavesPtr[j] != nullptr) // If this door points to a room
                         {
-                            cout << "Cave at (" << currentCave.pos.x << ", " << currentCave.pos.y << ") has a " << Cave::getColorLetterFromIndex(j) << " door\n";
-                            cout << "Cave at x=" << currentCave.linkedCavesPtr[j]->pos.x << " will have this door deleted\n";
                             currentCave.linkedCavesPtr[j]->linkedCavesPtr[j] = nullptr; // Set this door for that room to null
                         }
                     }
